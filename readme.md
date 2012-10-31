@@ -1,8 +1,4 @@
-# paulrhayes.com Experiments
-CSS, JS and HTML experiments from http://www.paulrhayes.com/, since 2009.
+#ValueOfEducation
+This is an information visualization of education's socioeconomic values.
 
-## Includes
-- 3D CSS cube, tetrahedron and sphere
-- Modal boxes using CSS transitions
-- An analogue clock using CSS transitions
-- CSS powered parallax and accordion effects
+We are basing part of the visualization on the 3dcube from paulrhayes.com Experiments
