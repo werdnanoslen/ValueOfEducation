@@ -25,6 +25,7 @@
 			</div>
 			<div class="face three">
 				3
+				<?php include('standalone/extracurricularVSacademic.php'); ?>
 			</div>
 			<div class="face four">
 				4
