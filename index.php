@@ -3,8 +3,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<link rel="stylesheet" href="css/experiment-styles.css" />
-	<link rel="stylesheet" href="css/cube.css" />
+	<link rel="stylesheet" href="css/cube.css?<?php time(); ?>" />
 </head>
 <body>
 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -12,8 +11,6 @@
 	<script type="text/javascript" src="js/cube.js"></script>
 
 	<div id="wrapper">
-
-	<div id="experiment">	
 		<div id="cube">
 			<div class="face one">
 				1
@@ -37,7 +34,6 @@
 				6
 			</div>
 		</div>	
-	</div>
 	</div>
 </body>
 

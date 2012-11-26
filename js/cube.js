@@ -1,7 +1,7 @@
+//Check for browser-compatible transform function name
 var props = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),
 	prop,
 	el = document.createElement('div');
-
 for(var i = 0, l = props.length; i < l; i++) {
 	if(typeof el.style[props[i]] !== "undefined") {
 		prop = props[i];
@@ -9,15 +9,18 @@ for(var i = 0, l = props.length; i < l; i++) {
 	}
 }
 
+//Navigation
 var xAngle = 0, yAngle = 0;
-$('body').keydown(function(evt) {
-	switch(evt.keyCode) {
+$('body').keydown(function(evt) 
+{
+	switch(evt.keyCode) 
+	{
 		case 37: // left
 			yAngle -= 90;
 			break;
 		
 		case 38: // up
-			xAngle += 90;				
+			xAngle += 90;
 			break;
 		
 		case 39: // right
