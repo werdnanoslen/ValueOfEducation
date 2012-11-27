@@ -1,4 +1,4 @@
-<div id="chart_incomeVextracurricular" style="height: 350px"></div>
+<div id="chart_incomeVacademic" style="height: 350px"></div>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
@@ -26,8 +26,8 @@
 			title: 'How does income affect academics?',
 			vAxis: {title: 'Monthly income'},
 			hAxis: {title: 'Students (ages 6-17)', format: '##%'},
-		}
-		visualization = new google.visualization.BarChart(document.getElementById('chart_incomeVextracurricular'));
+		};
+		visualization = new google.visualization.BarChart(document.getElementById('chart_incomeVacademic'));
 		visualization.draw(data, options);
 	}
 	
