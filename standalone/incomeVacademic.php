@@ -1,5 +1,3 @@
-<h4>How does income affect extra curricular participation?</h4>
-
 <div id="chart_incomeVextracurricular" style="height: 350px"></div>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -11,7 +9,7 @@
 
 	function drawVisualization() 
 	{
-		var query = new google.visualization.Query( 'https://docs.google.com/spreadsheet/ccc?key=0AoTqIjcFtb4bdHp2NFh2b0xDYW1UU2FRbl84YnR5cmc#gid=0');
+		var query = new google.visualization.Query( 'https://docs.google.com/spreadsheet/ccc?key=0AoTqIjcFtb4bdGR3RWRqV1pIcW9Sb1VSUUxzcEQ5SkE#gid=0');
 		query.send(handleQueryResponse);
 	}
 
@@ -23,8 +21,14 @@
 			return;
 		}
 		var data = response.getDataTable();
+		var options = 
+		{
+			title: 'How does income affect academics?',
+			vAxis: {title: 'Monthly income'},
+			hAxis: {title: 'Students (ages 6-17)', format: '##%'},
+		}
 		visualization = new google.visualization.BarChart(document.getElementById('chart_incomeVextracurricular'));
-		visualization.draw(data, null);
+		visualization.draw(data, options);
 	}
 	
 	google.setOnLoadCallback(drawVisualization);
