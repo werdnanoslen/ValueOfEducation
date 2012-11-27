@@ -1,82 +1,65 @@
 <html>
-<head>
-  <script type='text/javascript' src='https://www.google.com/jsapi'></script>
-  <script type='text/javascript'>
-   google.load('visualization', '1', {'packages': ['geomap']});
-   google.setOnLoadCallback(drawMap);
-
-    function drawMap() {
-      var data = google.visualization.arrayToDataTable([
-        ['State', 'Region',  'Percent in Gift Classes'],
-        ['Maine', 'Northeast region', 200],
-        ['New Hampshire', 'Northeast region', 200],
-        ['Vermont', 'Northeast region', 200],
-        ['Massachusetts', 'Northeast region', 200],
-        ['Rhode Island', 'Northeast region', 200],
-        ['Connecticut', 'Northeast region', 200],
-        ['Pennsylvania', 'Northeast region', 200],
-        ['New Jersey', 'Northeast region', 200],
-        ['New York', 'Northeast region', 200], //end of northeast region
-        ['Wisconsin', 'Midwest region', 400],
-        ['Michigan', 'Midwest region', 400],
-        ['Illinois', 'Midwest region', 400],
-        ['Indiana', 'Midwest region', 400],
-        ['Ohio', 'Midwest region', 400],
-        ['Missouri', 'Midwest region', 400],
-        ['North Dakota', 'Midwest region', 400],
-        ['South Dakota', 'Midwest region', 400],
-        ['Nebraska', 'Midwest region', 400],
-        ['Kansas', 'Midwest region', 400],
-        ['Minnesota', 'Midwest region', 400],
-        ['Iowa', 'Midwest region', 400], //end of midwest region
-        ['Delaware', 'South region', 600],
-        ['Maryland', 'South region', 600],
-        ['District of Columbia', 'South region', 600],
-        ['Virginia', 'South region', 600],
-        ['West Virginia', 'South region', 600],
-        ['North Carolina', 'South region', 600],
-        ['South Carolina', 'South region', 600],
-        ['Georgia', 'South region', 600],
-        ['Florida', 'South region', 600],
-        ['Kentucky', 'South region', 600],
-        ['Tennessee', 'South region', 600],
-        ['Mississippi', 'South region', 600], 
-        ['Alabama', 'South region', 600],
-        ['Oklahoma', 'South region', 600],
-        ['Texas', 'South region', 600],
-        ['Arkansas', 'South region', 600],
-        ['Louisiana', 'South region', 600], //end of south region
-        ['Idaho', 'West region', 800],
-        ['Montana', 'West region', 800],
-        ['Wyoming', 'West region', 800],
-        ['Nevada', 'West region', 800],
-        ['Utah', 'West region', 800],
-        ['Colorado', 'West region', 800],
-        ['Arizona', 'West region', 800],
-        ['New Mexico', 'West region', 800],
-        ['Alaska', 'West region', 800],
-        ['Washington', 'West region', 800],
-        ['Oregon', 'West region', 800],
-        ['California', 'West region', 800], 
-        ['Hawaii', 'West region', 800] //end of west region
-      ]);
-
-      var options = {};
-      options['region'] = 'US';
-      options['resolution'] = 'none';
-      options['colors'] = [0xFF8747, 0xFFB581, 0xc06000]; //orange colors
-      options['dataMode'] = 'regions';
-
-      var container = document.getElementById('map_canvas');
-      var geomap = new google.visualization.GeoMap(container);
-      geomap.draw(data, options);
-    };
-
-  </script>
-</head>
-
-<body>
-    <div id='map_canvas'></div>
-</body>
-
+	<head>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript">
+			google.load("visualization", "1", {packages:["corechart"]});
+			google.setOnLoadCallback(init);
+			function init(){
+				
+				var academicChart = new google.visualization.BubbleChart(document.getElementById('chart_div'));
+				var schoolTypeChart = new google.visualization.BubbleChart(document.getElementById('chart_div2'));
+				
+				drawChart();
+				drawChart2();
+				
+				function drawChart() {
+					var data = google.visualization.arrayToDataTable([
+						['ID', 'Percent in Gifted Classes (Success)', 'Percent Repeated Grade (Failure)', 'Number of Students Accounted For'],
+						['MW',    36.9,              9.7,      10300+10448],
+						['W',    38.1,              11.8,      11188+11316],
+						['S',    46,               18.6,      17670+17879],
+						['NE',    36.2,              14.4,      8259+8352],
+					
+					]);
+					
+					var options = {
+						title: 'Academic Success/Failure in US Regions',
+						hAxis: {title: 'Success (Percent in Gifted Classes)'},
+						vAxis: {title: 'Failure (Percent Repeated a Grade)'},
+						colorAxis: {colors: ['yellow', 'green']}
+						//bubble: {textStyle: {fontSize: 11}}
+					};
+					
+					academicChart.draw(data, options);
+					
+					}
+					
+					function drawChart2() {
+						var data = google.visualization.arrayToDataTable([
+							['ID', 'Percent in Public School', 'Percent in Private Schools', 'Number of Students Accounted For' ],
+							['MW',    69.9+10.4,              8.2+2.4,      10556 ],
+							['W',    73+13.8,              3.2+2.5,         11450],
+							['S',    77.2+18.2,               4.3+2.4,         18077],
+							['NE',    73.4+9.9,              6.3+2.7,  8450]
+						]);
+						
+						var options = {
+							title: 'School Type Statistics in US Regions',
+							hAxis: {title: 'Percent in Public Schools'},
+							vAxis: {title: 'Percent in Private Schools'},
+							colorAxis: {colors: ['yellow', 'green']}
+							//bubble: {textStyle: {fontSize: 11}}
+						};
+						
+						
+						schoolTypeChart.draw(data, options);
+				}
+			
+			}
+		</script>
+	</head>
+	<body>
+		<div id="chart_div" style="width: 900px; height: 500px;"></div>
+		<div id="chart_div2" style="width: 900px; height: 500px;"></div>
+	</body>
 </html>
