@@ -1,0 +1,82 @@
+<html>
+<head>
+  <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+  <script type='text/javascript'>
+   google.load('visualization', '1', {'packages': ['geomap']});
+   google.setOnLoadCallback(drawMap);
+
+    function drawMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['State', 'Region',  'Percent in Gift Classes'],
+        ['Maine', 'Northeast region', 200],
+        ['New Hampshire', 'Northeast region', 200],
+        ['Vermont', 'Northeast region', 200],
+        ['Massachusetts', 'Northeast region', 200],
+        ['Rhode Island', 'Northeast region', 200],
+        ['Connecticut', 'Northeast region', 200],
+        ['Pennsylvania', 'Northeast region', 200],
+        ['New Jersey', 'Northeast region', 200],
+        ['New York', 'Northeast region', 200], //end of northeast region
+        ['Wisconsin', 'Midwest region', 400],
+        ['Michigan', 'Midwest region', 400],
+        ['Illinois', 'Midwest region', 400],
+        ['Indiana', 'Midwest region', 400],
+        ['Ohio', 'Midwest region', 400],
+        ['Missouri', 'Midwest region', 400],
+        ['North Dakota', 'Midwest region', 400],
+        ['South Dakota', 'Midwest region', 400],
+        ['Nebraska', 'Midwest region', 400],
+        ['Kansas', 'Midwest region', 400],
+        ['Minnesota', 'Midwest region', 400],
+        ['Iowa', 'Midwest region', 400], //end of midwest region
+        ['Delaware', 'South region', 600],
+        ['Maryland', 'South region', 600],
+        ['District of Columbia', 'South region', 600],
+        ['Virginia', 'South region', 600],
+        ['West Virginia', 'South region', 600],
+        ['North Carolina', 'South region', 600],
+        ['South Carolina', 'South region', 600],
+        ['Georgia', 'South region', 600],
+        ['Florida', 'South region', 600],
+        ['Kentucky', 'South region', 600],
+        ['Tennessee', 'South region', 600],
+        ['Mississippi', 'South region', 600], 
+        ['Alabama', 'South region', 600],
+        ['Oklahoma', 'South region', 600],
+        ['Texas', 'South region', 600],
+        ['Arkansas', 'South region', 600],
+        ['Louisiana', 'South region', 600], //end of south region
+        ['Idaho', 'West region', 800],
+        ['Montana', 'West region', 800],
+        ['Wyoming', 'West region', 800],
+        ['Nevada', 'West region', 800],
+        ['Utah', 'West region', 800],
+        ['Colorado', 'West region', 800],
+        ['Arizona', 'West region', 800],
+        ['New Mexico', 'West region', 800],
+        ['Alaska', 'West region', 800],
+        ['Washington', 'West region', 800],
+        ['Oregon', 'West region', 800],
+        ['California', 'West region', 800], 
+        ['Hawaii', 'West region', 800] //end of west region
+      ]);
+
+      var options = {};
+      options['region'] = 'US';
+      options['resolution'] = 'none';
+      options['colors'] = [0xFF8747, 0xFFB581, 0xc06000]; //orange colors
+      options['dataMode'] = 'regions';
+
+      var container = document.getElementById('map_canvas');
+      var geomap = new google.visualization.GeoMap(container);
+      geomap.draw(data, options);
+    };
+
+  </script>
+</head>
+
+<body>
+    <div id='map_canvas'></div>
+</body>
+
+</html>
