@@ -1,8 +1,8 @@
 #cube {
   position: relative;
-  margin: 100px auto 0;
-  height: 540px;
-  width: 540px;
+  margin: auto auto;
+  height: 640px;
+  width: 640px;
   -webkit-transition: -webkit-transform 2s linear;
   -webkit-transform-style: preserve-3d;
 
@@ -12,10 +12,10 @@
 
 .face {
   position: absolute;
-  height: 500px;
-  width: 500px;
+  height: 600px;
+  width: 600px;
   padding: 30px;
-  background-color: rgba(50, 50, 50, 0.7);
+  background-color: rgba(50, 50, 50, 1.0);
   font-size: 27px;
   line-height: 1em;
   color: #fff;
@@ -28,27 +28,17 @@
   -moz-transform: translateZ(280px);
 }
 
-#cube .two  {
-  -webkit-transform: rotateX(90deg) translateZ(280px);
-  -moz-transform: rotateX(90deg) translateZ(280px);
-}
-
-#cube .three {
+#cube .two {
   -webkit-transform: rotateY(90deg) translateZ(280px);
   -moz-transform: rotateY(90deg) translateZ(280px);
 }
 
-#cube .four {
+#cube .three {
   -webkit-transform: rotateY(180deg) translateZ(280px);
   -moz-transform: rotateY(180deg) translateZ(280px);
 }
 
-#cube .five {
+#cube .four {
   -webkit-transform: rotateY(-90deg) translateZ(280px);
   -moz-transform: rotateY(-90deg) translateZ(280px);
-}
-
-#cube .six {
-  -webkit-transform: rotateX(-90deg) rotate(180deg) translateZ(280px);
-  -moz-transform: rotateX(-90deg) rotate(180deg) translateZ(280px);
 }

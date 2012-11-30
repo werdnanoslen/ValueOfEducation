@@ -1,6 +1,4 @@
-<div id="chart_incomeVacademic" style="height: 350px"></div>
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<div id="chart_incomeVacademic" style="width: 600px; height: 600px;"></div>
 
 <script type="text/javascript">
 	google.load('visualization', '1', {packages: ['barchart']});

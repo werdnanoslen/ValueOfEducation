@@ -1,4 +1,3 @@
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
 	google.load("visualization", "1", {
 		packages : ["corechart"]
@@ -91,9 +90,9 @@
 	}
 </script>
 
-<div id="extracurricularVsAcademic_div1" style="width: 900px; height: 500px;"></div>
+<div id="extracurricularVsAcademic_div1" style="width: 600px; height: 300px;"></div>
 <div id="extracurricularVsAcademic_div2Heading">
 	<h4>Extracurricular Activities Of Students In Metropolitan Cities</h4>
 </div>
-<div id="extracurricularVsAcademic_div2" style="width: 900px; height: 500px;"></div>
+<div id="extracurricularVsAcademic_div2" style="width: 600px; height: 300px;"></div>
 
