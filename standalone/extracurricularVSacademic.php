@@ -30,13 +30,13 @@
 
 				title : 'Academic Success/Failure Related to Extracurricular Activities',
 				titleTextStyle : {
-					fontSize : 24
+					fontSize : 20
 				},
 
 				vAxis : {
 					title : 'City Type',
 					titleTextStyle : {
-						fontSize : 20
+						fontSize : 16
 					},
 
 					textStyle : {
@@ -51,7 +51,7 @@
 
 				legend : {
 					textStyle : {
-						fontSize : 20
+						fontSize : 12
 					},
 					position : 'bottom'
 				},
