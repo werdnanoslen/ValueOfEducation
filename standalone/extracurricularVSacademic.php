@@ -9,7 +9,7 @@
 	google.setOnLoadCallback(init);
 
 	function init() {
-		var cityAcademicBarChartData = google.visualization.arrayToDataTable([['City Type', 'Percent in gifted classes', 'Percent ever repeated a grade'], ['Metropolitan', 41.5, 14.5], ['In central cities', 41.3, 17], ['Outside central cities', 41.8, 12.1], ['Nonmetropolitan', 34.7, 17.8]]);
+		var cityAcademicBarChartData = google.visualization.arrayToDataTable([['City Type', 'Percent in Gifted Classes', 'Percent Ever Repeated a Grade'], ['Metropolitan', 41.5, 14.5], ['In Central Cities', 41.3, 17], ['Outside Central Cities', 41.8, 12.1], ['Nonmetropolitan', 34.7, 17.8]]);
 		var cityAcademicBarChart = new google.visualization.BarChart(document.getElementById('extracurricularVsAcademic_div1'));
 
 		var extraCurricularGuageData = google.visualization.arrayToDataTable([['Label', 'Value'], ['Sports', 71.9], ['Clubs', 62.7], ['Lessons', 63]]);
@@ -93,25 +93,25 @@
 				extraCurricularGuageData.setCell(1, 1, 62.7);
 				extraCurricularGuageData.setCell(2, 1, 63);
 				drawExtraCurricularGuages();
-				guagesHeading.innerHTML = "<h4>Extracurricular Activities Of Students In Metropolitan Cities</h4>";
+				guagesHeading.innerHTML = "<h4>Extracurricular Activities of Students in Metropolitan Cities</h4>";
 			} else if (row == 1) {
 				extraCurricularGuageData.setCell(0, 1, 59.8);
 				extraCurricularGuageData.setCell(1, 1, 54.1);
 				extraCurricularGuageData.setCell(2, 1, 55.6);
 				drawExtraCurricularGuages();
-				guagesHeading.innerHTML = "<h4>Extracurricular Activities Of Students In Central Cities</h4>";
+				guagesHeading.innerHTML = "<h4>Extracurricular Activities of Students in Central Cities</h4>";
 			} else if (row == 2) {
 				extraCurricularGuageData.setCell(0, 1, 77.2);
 				extraCurricularGuageData.setCell(1, 1, 66.4);
 				extraCurricularGuageData.setCell(2, 1, 66.2);
 				drawExtraCurricularGuages();
-				guagesHeading.innerHTML = "<h4>Extracurricular Activities Of Students Outside Central Cities</h4>";
+				guagesHeading.innerHTML = "<h4>Extracurricular Activities of Students outside Central Cities</h4>";
 			} else {//if(row == 3)
 				extraCurricularGuageData.setCell(0, 1, 73.6);
 				extraCurricularGuageData.setCell(1, 1, 58.7);
 				extraCurricularGuageData.setCell(2, 1, 48.2);
 				drawExtraCurricularGuages();
-				guagesHeading.innerHTML = "<h4>Extracurricular Activities Of Students In Nonmetropolitan Cities</h4>";
+				guagesHeading.innerHTML = "<h4>Extracurricular Activities of Students in Nonmetropolitan Cities</h4>";
 			}
 
 		}
@@ -122,7 +122,7 @@
 
 <div id="extracurricularVsAcademic_div1" style="width: 600px; height: 375px;"></div>
 <div id="extracurricularVsAcademic_div2Heading">
-	<h4>Extracurricular Activities Of Students In Metropolitan Cities</h4>
+	<h4>Extracurricular Activities of Students in Metropolitan Cities</h4>
 </div>
 <div id="extracurricularVsAcademic_div2" style="width: 600px; height: 225px;"></div>
 
