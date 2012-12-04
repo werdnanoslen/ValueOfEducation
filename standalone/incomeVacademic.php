@@ -1,7 +1,7 @@
 <div id="chart_incomeVacademic" style="width: 600px; height: 600px;"></div>
 
 <script type="text/javascript">
-	google.load('visualization', '1', {packages: ['barchart']});
+	google.load('visualization', '1', {packages: ['corechart']});
 	
 	var visualization;
 
@@ -22,8 +22,12 @@
 		var options = 
 		{
 			title: 'How does income affect academics?',
+			titleTextStyle: {fontSize: '20'},
+			chartArea: {left: '25%'},
+			hAxis: {title: '% of Students (total: 47,800)', format: '#.##%'},
 			vAxis: {title: 'Monthly income'},
-			hAxis: {title: 'Students (ages 6-17)', format: '##%'},
+			legend: 'bottom',
+			legendFontSize: '14px',
 		};
 		visualization = new google.visualization.BarChart(document.getElementById('chart_incomeVacademic'));
 		visualization.draw(data, options);
