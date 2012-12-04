@@ -113,7 +113,6 @@
 
 	}
 </script>
-</head>
 
 <div id="extracurricularVsAcademic_div1" style="width: 900px; height: 500px;"></div>
 <div id="extracurricularVsAcademic_div2Heading">
