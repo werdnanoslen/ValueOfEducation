@@ -93,5 +93,5 @@ academicChart.setSelection([]);
 }
 </script>
 
-<div id="chart_div" style="width: 900px; height: 500px;"></div>
-<div id="chart_div2" style="width: 900px; height: 500px;"></div>
+<div id="chart_div" style="width: 600px; height: 300px;"></div>
+<div id="chart_div2" style="width: 600px; height: 300px;"></div>

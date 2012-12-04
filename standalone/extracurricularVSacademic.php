@@ -9,7 +9,7 @@
 	google.setOnLoadCallback(init);
 
 	function init() {
-		var cityAcademicBarChartData = google.visualization.arrayToDataTable([['City Type', 'Percent in gifted classes', 'Percent ever repeated a grade'], ['Metropolitan', 41.5, 14.5], ['In central cities', 41.3, 17], ['Outside central cities', 41.8, 12.1], ['Nonmetropolitan', 34.7, 17.8]]);
+		var cityAcademicBarChartData = google.visualization.arrayToDataTable([['City Type', 'Enrolled in gifted classes', 'Ever repeated a grade'], ['Metropolitan', 41.5, 14.5], ['In central cities', 41.3, 17], ['Outside central cities', 41.8, 12.1], ['Nonmetropolitan', 34.7, 17.8]]);
 		var cityAcademicBarChart = new google.visualization.BarChart(document.getElementById('extracurricularVsAcademic_div1'));
 
 		var extraCurricularGuageData = google.visualization.arrayToDataTable([['Label', 'Value'], ['Sports', 71.9], ['Clubs', 62.7], ['Lessons', 63]]);
@@ -30,13 +30,13 @@
 
 				title : 'Academic Success/Failure Related to Extracurricular Activities',
 				titleTextStyle : {
-					fontSize : 24
+					fontSize : 20
 				},
 
 				vAxis : {
 					title : 'City Type',
 					titleTextStyle : {
-						fontSize : 20
+						fontSize : 16
 					},
 
 					textStyle : {
@@ -46,7 +46,7 @@
 				},
 				legend : {
 					textStyle : {
-						fontSize : 20
+						fontSize : 12
 					},
 					position : 'bottom'
 				},
@@ -114,9 +114,9 @@
 	}
 </script>
 
-<div id="extracurricularVsAcademic_div1" style="width: 900px; height: 500px;"></div>
+<div id="extracurricularVsAcademic_div1" style="width: 600px; height: 375px;"></div>
 <div id="extracurricularVsAcademic_div2Heading">
 	<h4>Extracurricular Activities Of Students In Metropolitan Cities</h4>
 </div>
-<div id="extracurricularVsAcademic_div2" style="width: 1200px; height: 500px;"></div>
+<div id="extracurricularVsAcademic_div2" style="width: 600px; height: 225px;"></div>
 
