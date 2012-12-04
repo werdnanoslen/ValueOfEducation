@@ -1,3 +1,4 @@
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
 	google.load("visualization", "1", {
 		packages : ["corechart"]
@@ -23,13 +24,36 @@
 		function drawCityAcademicBarChart() {
 
 			var options = {
-				title : 'The effect of extracurricular activiities on academic success',
+				chartArea : {
+					left : 200
+				},
+
+				title : 'Academic Success/Failure Related to Extracurricular Activities',
+				titleTextStyle : {
+					fontSize : 24
+				},
+
 				vAxis : {
-					title : 'City Type'
+					title : 'City Type',
+					titleTextStyle : {
+						fontSize : 20
+					},
+
+					textStyle : {
+						fontSize : 16
+					}
+
+				},
+				legend : {
+					textStyle : {
+						fontSize : 20
+					},
+					position : 'bottom'
 				},
 
 				isStacked : false
 			};
+
 			cityAcademicBarChart.draw(cityAcademicBarChartData, options);
 		}
 
@@ -89,10 +113,11 @@
 
 	}
 </script>
+</head>
 
-<div id="extracurricularVsAcademic_div1" style="width: 600px; height: 300px;"></div>
+<div id="extracurricularVsAcademic_div1" style="width: 900px; height: 500px;"></div>
 <div id="extracurricularVsAcademic_div2Heading">
 	<h4>Extracurricular Activities Of Students In Metropolitan Cities</h4>
 </div>
-<div id="extracurricularVsAcademic_div2" style="width: 600px; height: 300px;"></div>
+<div id="extracurricularVsAcademic_div2" style="width: 1200px; height: 500px;"></div>
 
