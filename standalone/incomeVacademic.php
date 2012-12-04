@@ -21,11 +21,11 @@
 		var data = response.getDataTable();
 		var options = 
 		{
-			title: 'How does income affect academics?',
+			title: 'Academic Success/Failure Related to Income',
 			titleTextStyle: {fontSize: '20'},
 			chartArea: {left: '25%'},
 			hAxis: {title: '% of Students (total: 47,800)', format: '#.##%'},
-			vAxis: {title: 'Monthly income'},
+			vAxis: {title: 'Monthly Income'},
 			legend: 'bottom',
 			legendFontSize: '14px',
 		};
