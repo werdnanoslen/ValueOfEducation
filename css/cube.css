@@ -42,3 +42,35 @@
   -webkit-transform: rotateY(-90deg) translateZ(280px);
   -moz-transform: rotateY(-90deg) translateZ(280px);
 }
+
+ul.byline 
+{
+	padding: 0;
+	marign: 0;
+	width: 100%;
+}
+ul.byline a
+{
+	color: white;
+}
+ul.byline a:hover
+{
+	color: gray;
+}
+ul.byline li
+{
+	list-style-type: none; 
+	display: inline-block;
+	text-align: center;
+	font-size: 80%;
+}
+ul.byline li:first-of-type
+{
+	text-align: left;
+	margin-right: 14%;
+}
+ul.byline li:last-of-type
+{
+	text-align: right;
+	float: right;
+}
