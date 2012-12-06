@@ -11,7 +11,7 @@
 
 <p>Contributors: </p>
 <ul class="byline">
-<li><a href="">Urvashi Goverdhan</a></li> 
-<li><a href="">Perron Jones</a></li> 
+<li><a href="http://www.linkedin.com/pub/urvashi-goverdhan/14/656/122">Urvashi Goverdhan</a></li> 
+<li><a href="http://www.linkedin.com/in/perronjones">Perron Jones</a></li> 
 <li><a href="http://andyhub.com/">Andrew Nelson</a></li>
 </ul>
