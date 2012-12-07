@@ -1,21 +1,26 @@
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
-google.load("visualization", "1", {packages:["corechart"]});
-google.setOnLoadCallback(init);
+google.load("visualization", "1", {packages:["corechart"]}); //loading chart visualization from Google Charts API
+google.setOnLoadCallback(init); //Starting the info-viz after the page loads
 function init(){
 
+//creates the chart in the specified div
 var academicChart = new google.visualization.BubbleChart(document.getElementById('chart_div'));
+//creates the chart in the specified div
 var schoolTypeChart = new google.visualization.BubbleChart(document.getElementById('chart_div2'));
 
-drawChart();
-drawChart2();
+drawChart(); //calls the implemented function "drawChart"
+drawChart2(); //calls the implemented function "drawChart2"
 
-google.visualization.events.addListener(academicChart, 'onmouseover', updateSchoolTypeChart);
-google.visualization.events.addListener(academicChart, 'onmouseout', clearSchoolTypeChart);
-google.visualization.events.addListener(schoolTypeChart, 'onmouseover', updateAcademicChart);
-google.visualization.events.addListener(schoolTypeChart, 'onmouseout', clearAcademicChart);
+//add an event listener to the charts. These are responsible for calling the functions that implement
+//the interaction within the info-viz
+google.visualization.events.addListener(academicChart, 'onmouseover', updateSchoolTypeChart); //mouse hover linking
+google.visualization.events.addListener(academicChart, 'onmouseout', clearSchoolTypeChart); //clear linking when mouse stops hovering
+google.visualization.events.addListener(schoolTypeChart, 'onmouseover', updateAcademicChart); //mouse hover linking
+google.visualization.events.addListener(schoolTypeChart, 'onmouseout', clearAcademicChart); //clear linking when mouse stops hovering
 
 function drawChart() {
+//populate the chart data with the data from our data source	
 var data = google.visualization.arrayToDataTable([
 ['ID', 'Percent in Gifted Classes (Success)', 'Percent Repeated Grade (Failure)', 'Region', 'Number of Students Accounted For'],
 ['MW',    36.9,              9.7, 'Midwest',      10300+10448],
@@ -25,6 +30,7 @@ var data = google.visualization.arrayToDataTable([
 
 ]);
 
+//set up customization for our chart
 var options = {
 title: 'Academic Success/Failure in US Regions',
 hAxis: {title: 'Success (Percent in Gifted Classes)'},
@@ -36,11 +42,13 @@ minSize : 15
 }
 };
 
+//call the google api draw method to render the chart
 academicChart.draw(data, options);
 
 }
 
 function drawChart2() {
+//populate the chart data with the data from our data source	
 var data = google.visualization.arrayToDataTable([
 ['ID', 'Percent in Public School', 'Percent in Private Schools', 'Region', 'Number of Students Accounted For' ],
 ['MW',    69.9+10.4,              8.2+2.4,  'Midwest',     10556 ],
@@ -49,6 +57,7 @@ var data = google.visualization.arrayToDataTable([
 ['NE',    73.4+9.9,              6.3+2.7,  'Northeast',  8450]
 ]);
 
+//set up customization for our chart
 var options = {
 title: 'School Type Statistics in US Regions',
 hAxis: {title: 'Percent in Public Schools'},
@@ -60,33 +69,46 @@ minSize : 15
 }
 };
 
+//call the google api draw method to render the chart
 schoolTypeChart.draw(data, options);
 }
 
+//implements linking within the chart by highlighting the correct
+//bubble when the corresponding bubble in the other chart is being
+//viewed
 function updateSchoolTypeChart(e) {
 console.log("updateSchoolTypeChart: here " + e['row']);
 var row = e['row'];
-schoolTypeChart.setSelection([{row:row, column:null}]);
+schoolTypeChart.setSelection([{row:row, column:null}]); //highlights the correct bubble
 }
 
+//implements linking within the chart by removing the correct highlighting of a
+//bubble when the corresponding bubble in the other chart is being
+//viewed. This avoids confusion when interpreting the chart
 function clearSchoolTypeChart(e) {
 console.log("clearSchoolTypeChart: here " + e['row']);
 var row = e['row'];
-schoolTypeChart.setSelection([]);
+schoolTypeChart.setSelection([]); //clears the highlight
 
 }
 
+//implements linking within the chart by highlighting the correct
+//bubble when the corresponding bubble in the other chart is being
+//viewed
 function updateAcademicChart(e) {
 console.log("updateAcademicChart: here " + e['row']);
 var row = e['row'];
-academicChart.setSelection([{row:row, column:null}]);
+academicChart.setSelection([{row:row, column:null}]); //highlights the correct bubble
 
 }
 
+//implements linking within the chart by removing the correct highlighting of a
+//bubble when the corresponding bubble in the other chart is being
+//viewed. This avoids confusion when interpreting the chart
 function clearAcademicChart(e) {
 console.log("clearAcademicChart: here " + e['row']);
 var row = e['row'];
-academicChart.setSelection([]);
+academicChart.setSelection([]); //clears the highlight
 
 }
 
