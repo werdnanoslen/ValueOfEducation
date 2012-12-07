@@ -2,27 +2,34 @@
 <script type="text/javascript">
 	google.load("visualization", "1", {
 		packages : ["corechart"]
-	});
+	}); //loading chart visualization from Google Charts API
 	google.load('visualization', '1', {
 		packages : ['gauge']
-	});
-	google.setOnLoadCallback(init);
+	}); //loading gauge visualization from Google Charts API
+	google.setOnLoadCallback(init); //Starting the info-viz after the page loads
 
 	function init() {
+		//populate the chart data with the data from our data source	
 		var cityAcademicBarChartData = google.visualization.arrayToDataTable([['City Type', 'Percent in Gifted Classes', 'Percent Ever Repeated a Grade'], ['Metropolitan', 41.5, 14.5], ['In Central Cities', 41.3, 17], ['Outside Central Cities', 41.8, 12.1], ['Nonmetropolitan', 34.7, 17.8]]);
+		//creates the chart in the specified div
 		var cityAcademicBarChart = new google.visualization.BarChart(document.getElementById('extracurricularVsAcademic_div1'));
 
+		//populate the gauge data with the data from our data source	
 		var extraCurricularGuageData = google.visualization.arrayToDataTable([['Label', 'Value'], ['Sports', 71.9], ['Clubs', 62.7], ['Lessons', 63]]);
+		//creates the gauges in the specified div
 		var extraCurricularGuages = new google.visualization.Gauge(document.getElementById('extracurricularVsAcademic_div2'));
 
-		drawCityAcademicBarChart();
+		drawCityAcademicBarChart(); //calls the implemented function "drawCityAcademicBarChart"
 
+		//add an event listener to the chart. This is responsible for calling the function that implements
+		//the interaction within the info-viz
 		google.visualization.events.addListener(cityAcademicBarChart, 'onmouseover', updateExtraCurricularGuages);
 
-		drawExtraCurricularGuages();
+		drawExtraCurricularGuages(); //calls the implemented function "drawExtraCurricularGuages"
 
 		function drawCityAcademicBarChart() {
 
+			//set up customization for our chart
 			var options = {
 				chartArea : {
 					left : 200
@@ -59,11 +66,14 @@
 				isStacked : false
 			};
 
+			//call the google api draw method to render the chart
 			cityAcademicBarChart.draw(cityAcademicBarChartData, options);
 		}
 
+
 		function drawExtraCurricularGuages() {
 
+			//set up customization for our gauges
 			var options = {
 				width : 400,
 				height : 120,
@@ -78,10 +88,13 @@
 				minorTicks : 5
 			};
 
+			//call the google api draw method to render the gauges
 			extraCurricularGuages.draw(extraCurricularGuageData, options);
 
 		}
 
+		//implements linking AND animation for the gauges by animating them to represent the correct
+		//data depending on which bar is being hovered over in the the bar chart
 		function updateExtraCurricularGuages(e) {
 			console.log("here " + e['row']);
 			var row = e['row'];
